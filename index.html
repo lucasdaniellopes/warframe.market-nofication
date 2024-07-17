@@ -1,7 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
+    <title>Warframe Item Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Warframe Item Tracker</h1>
+      <form id="itemForm">
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" name="itemName" required />
+
+        <label for="itemValue">Valor em Platinas:</label>
+        <input type="number" id="itemValue" name="itemValue" required />
+
+        <button type="submit">Salvar</button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

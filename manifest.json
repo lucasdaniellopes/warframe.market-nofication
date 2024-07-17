@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Warframe Item Tracker",
+  "version": "1.0",
+  "description": "Receba o nome de um item do Warframe e o valor desse item em platinas.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://zeusdrive.cloud/*",
+    "https://api.warframe.market/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
