@@ -10,10 +10,9 @@
     "activeTab",
     "scripting"
   ],
-  "host_permissions": [
-    "https://zeusdrive.cloud/*",
-    "https://api.warframe.market/*"
-  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }

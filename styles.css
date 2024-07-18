@@ -1,3 +1,15 @@
+*,
+a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.938rem;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -25,12 +37,18 @@ form {
 label {
   margin-top: 10px;
 }
-
+label:nth-child(1) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 input {
+  position: relative;
   padding: 5px;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: #000;
 }
 
 button {
@@ -47,7 +65,62 @@ button:hover {
   background-color: #0056b3;
 }
 
-#result {
-  margin-top: 10px;
+/* Estilos gerais da barra de rolagem */
+#itemList::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Estilos da trilha da barra de rolagem */
+#itemList::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do thumb da barra de rolagem */
+#itemList::-webkit-scrollbar-thumb {
+  background: #1bb194;
+  border-radius: 10px;
+}
+
+/* Estilos da barra de rolagem ao passar o mouse */
+#itemList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body #itemList {
+  width: 100%;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-weight: bold;
+  position: absolute;
+  top: 51px;
+  left: 0;
+  color: #fff;
+  background: rgba(7, 16, 19, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(7, 16, 19, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#itemList li {
+  border: 1px solid transparent;
+  color: #fff;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#itemList li a {
+  transition: 0.3s;
+}
+
+#itemList li:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#itemList li:hover a {
+  color: #1bb194;
 }
