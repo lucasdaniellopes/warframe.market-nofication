@@ -21,9 +21,42 @@
           <ul id="itemList"></ul>
         </label>
 
-        <label for="itemValue">Price:</label>
-        <input type="number" id="itemValue" name="itemValue" required />
-
+        <div class="signalPrice-box">
+          <div>
+            <span>When the price is:</span>
+            <ul class="itemSignals">
+              <li>
+                <input
+                  type="radio"
+                  id="below"
+                  name="itemSignal"
+                  value="below"
+                  hidden
+                  checked
+                />
+                <label for="below" class="itemSignal">
+                  <div>Below</div>
+                </label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="above"
+                  name="itemSignal"
+                  value="above"
+                  hidden
+                />
+                <label for="above" class="itemSignal">
+                  <div>Above</div>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <label for="itemValue"
+            >Price:
+            <input type="number" id="itemValue" name="itemValue" required />
+          </label>
+        </div>
         <button type="submit">Add</button>
       </form>
     </div>

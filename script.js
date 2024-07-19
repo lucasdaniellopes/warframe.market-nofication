@@ -14,16 +14,19 @@ async function filterItemsName() {
   // Adiciona o listener para o clique fora do input
   document.addEventListener('click', (event) => {
     if (!itemInput.contains(event.target)) {
-      updateItemList(''); // Limpa a lista se o clique for fora do input
+      const list = document.getElementById('itemList');
+      list.innerHTML = '';
     }
   });
 
   // Adiciona o listener para o clique nos itens da lista
   document.addEventListener('click', (event) => {
     if (event.target.classList.contains('item')) {
+      const list = document.getElementById('itemList');
       itemInput.value = event.target.textContent;
+      itemInput.textContent = event.target.textContent;
+      list.innerHTML = '';
       const urlName = event.target.getAttribute('urlName');
-      console.log(`Item clicado: ${urlName}`);
     }
   });
 
@@ -43,7 +46,6 @@ async function filterItemsName() {
 window.onload = filterItemsName;
 
 form.addEventListener('click', async (event) => {
-  event.preventDefault();
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
